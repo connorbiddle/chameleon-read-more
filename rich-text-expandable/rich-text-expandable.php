@@ -31,12 +31,22 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 				'fields' => array( // Section Fields
 					'text' => array(
 						'type'        => 'editor',
-						'label'       => '',
-						'rows'        => 13,
+						'label'       => 'Text (Collapsed)',
+						'rows'        => 5,
 						'wpautop'     => false,
 						'preview'     => array(
 							'type'     => 'text',
 							'selector' => '.fl-rich-text-expandable',
+						),
+						'connections' => array( 'string' ),
+					),
+					'text_expanded' => array(
+						'type'        => 'editor',
+						'label'       => 'Text (Expanded)',
+						'rows'        => 10,
+						'wpautop'     => false,
+						'preview'     => array(
+							'type'     => 'none',
 						),
 						'connections' => array( 'string' ),
 					),
