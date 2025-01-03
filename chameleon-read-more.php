@@ -3,7 +3,7 @@
 /*
  * Plugin Name:       Chameleon Read More
  * Description:       Add a custom "Text Editor (Expandable)" module that has a "read more" link.
- * Version:           0.0.1
+ * Version:           1.0.0
  * Author:            Chameleon
  * Author URI:        https://chameleon.co.uk/
  * License:           GPL v2 or later
