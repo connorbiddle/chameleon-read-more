@@ -14,6 +14,16 @@
 define( 'CRM_MODULES_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CRM_MODULES_URL', plugins_url( '/', __FILE__ ) );
 
+function crm_limit_percentage( $value ) {
+    if ( $value < 0 ) {
+        return 0;
+    } else if ( $value > 100 ) {
+        return 100;
+    }
+
+    return $value;
+}
+
 function crm_load_modules() {
     if ( class_exists( 'FLBuilder' ) ) {
         require_once 'rich-text-expandable/rich-text-expandable.php';

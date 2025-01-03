@@ -31,8 +31,8 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 				'fields' => array( // Section Fields
 					'text' => array(
 						'type'        => 'editor',
-						'label'       => 'Text (Collapsed)',
-						'rows'        => 5,
+						'label'       => '',
+						'rows'        => 10,
 						'wpautop'     => false,
 						'preview'     => array(
 							'type'     => 'text',
@@ -40,14 +40,30 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 						),
 						'connections' => array( 'string' ),
 					),
-					'text_expanded' => array(
-						'type'        => 'editor',
-						'label'       => 'Text (Expanded)',
-						'rows'        => 10,
-						'wpautop'     => false,
-						'preview'     => array(
-							'type'     => 'none',
+					'collapsed_height' => array(
+						'type'         => 'unit',
+						'label'        => 'Collapsed Height',
+						'help'		   => 'What percentage of the text should be visible before expanding?',
+						'units'        => array( '%' ),
+						'sanitize'	   => 'crm_limit_percentage',
+						'slider' => array(
+							'min'   => 0,
+							'max'   => 100,
+							'step'  => 1,
 						),
+					),
+					'read_more_text' => array(
+						'type'        => 'text',
+						'label'       => '"Read More" Button Text',
+						'help'		  => 'Shows when collapsed.',
+						'default'	  => 'Read More',
+						'connections' => array( 'string' ),
+					),
+					'read_less_text' => array(
+						'type'        => 'text',
+						'label'       => '"Read Less" Button Text',
+						'help'		  => 'Shows when expanded.',
+						'default'	  => 'Read Less',
 						'connections' => array( 'string' ),
 					),
 				),

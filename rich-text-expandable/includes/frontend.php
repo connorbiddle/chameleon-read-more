@@ -12,5 +12,5 @@
 	}
 	echo true === $wpautop ? FLBuilderUtils::wpautop( $wp_embed->autoembed( $settings->text ), $module ) : $wp_embed->autoembed( $settings->text );
 
-	?> <a class="fl-rich-text-expandable-expand" href="javascript:void(0)">Read more</a>
+	?>
 </div>
