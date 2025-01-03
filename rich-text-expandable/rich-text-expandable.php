@@ -29,21 +29,11 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 			'general' => array( // Section
 				'title'  => '', // Section Title
 				'fields' => array( // Section Fields
-					'text' => array(
-						'type'        => 'editor',
-						'label'       => '',
-						'rows'        => 10,
-						'wpautop'     => false,
-						'preview'     => array(
-							'type'     => 'text',
-							'selector' => '.fl-rich-text-expandable',
-						),
-						'connections' => array( 'string' ),
-					),
 					'collapsed_height' => array(
 						'type'         => 'unit',
 						'label'        => 'Collapsed Height',
-						'help'		   => 'What percentage of the text should be visible before expanding?',
+						'help'		   => 'What percentage of the text should be visible before expanding? (Note: This will not update in the builder - instead, press P to preview.)',
+						'default'	   => 50,
 						'units'        => array( '%' ),
 						'sanitize'	   => 'crm_limit_percentage',
 						'slider' => array(
@@ -57,6 +47,10 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 						'label'       => '"Read More" Button Text',
 						'help'		  => 'Shows when collapsed.',
 						'default'	  => 'Read More',
+						'preview'	  => array(
+							'type'	   => 'text',
+							'selector' => '.fl-rich-text-expandable-button',
+						),
 						'connections' => array( 'string' ),
 					),
 					'read_less_text' => array(
@@ -64,6 +58,17 @@ FLBuilder::register_module('FLRichTextExpandableModule', array(
 						'label'       => '"Read Less" Button Text',
 						'help'		  => 'Shows when expanded.',
 						'default'	  => 'Read Less',
+						'connections' => array( 'string' ),
+					),
+					'text' => array(
+						'type'        => 'editor',
+						'label'       => 'Text Content',
+						'rows'        => 10,
+						'wpautop'     => false,
+						'preview'     => array(
+							'type'     => 'text',
+							'selector' => '.fl-rich-text-expandable-content',
+						),
 						'connections' => array( 'string' ),
 					),
 				),

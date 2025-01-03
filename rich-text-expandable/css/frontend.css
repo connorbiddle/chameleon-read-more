@@ -1,3 +1,8 @@
 .fl-builder-content .fl-rich-text-expandable strong {
   font-weight: bold;
 }
+
+.fl-builder-content .fl-rich-text-expandable-content {
+  overflow-y: hidden;
+  transition: height 500ms ease;
+}
